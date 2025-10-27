@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=Zen Browser
+Exec=/usr/bin/zen-browser %u
+Icon=zen-browser
+Type=Application
+Categories=Network;WebBrowser;
+StartupNotify=true
+MimeType=text/html;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;
+Keywords=Internet;WWW;Browser;Web;Explorer;
+Actions=new-window;new-private-window;profilemanager;
+
+[Desktop Action new-window]
+Name=Open a New Window
+Exec=/usr/bin/zen-browser %u
+
+[Desktop Action new-private-window]
+Name=Open a New Private Window
+Exec=/usr/bin/zen-browser --private-window %u
+
+[Desktop Action profilemanager]
+Name=Open the Profile Manager
+Exec=/usr/bin/zen-browser --ProfileManager %u
