@@ -19,6 +19,8 @@ BuildRequires:  mozilla-nss-certs
 BuildRequires:  mozilla-nspr
 BuildRequires:  hunspell
 BuildRequires:  hyphen
+BuildRequires:  chrpath
+BuildRequires:  execstack
 Requires:       mozilla-nss
 Requires:       mozilla-nss-certs
 Requires:       mozilla-nspr
@@ -55,7 +57,16 @@ install -m644 %{_sourcedir}/policies.json %{buildroot}%{_libdir}/zen-browser/dis
 
 ln -sf /usr/share/hunspell %{buildroot}%{_libdir}/zen-browser/dictionaries
 ln -sf /usr/share/hyphen %{buildroot}%{_libdir}/zen-browser/hyphenation
-ln -sf /usr/lib64/libnssckbi.so %{buildroot}%{_libdir}/zen-browser/libnssckbi.so 
+
+for lib in libnspr4.so libplc4.so libplds4.so \
+        libnss3.so libnssutil3.so libsmime3.so libssl3.so \
+        libfreeblpriv3.so libsoftokn3.so libnssckbi.so; do
+    rm -f %{buildroot}%{_libdir}/zen-browser/$lib
+    ln -sf %{_libdir}/$lib %{buildroot}%{_libdir}/zen-browser/$lib
+done
+
+execstack -c %{buildroot}%{_libdir}/zen-browser/libonnxruntime.so
+chrpath -d %{buildroot}%{_libdir}/zen-browser/libonnxruntime.so
 
 %fdupes %{buildroot}%{_libdir}/zen-browser
 
