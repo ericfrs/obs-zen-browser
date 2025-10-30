@@ -28,7 +28,17 @@ Requires:       hunspell
 Requires:       hyphen
 
 %description
-%{summary}.
+Zen Browser is a Firefox-based web browser focused on privacy, customization,
+and productivity. It features vertical tabs, workspace management, split view,
+and a minimal, distraction-free interface.
+
+Key features:
+- Vertical tab sidebar with compact mode
+- Workspace management for organizing tabs
+- Split view for multitasking
+- Firefox Sync support
+- Privacy-focused with no tracking
+- Compatible with Firefox extensions
 
 %prep
 %setup -q -n zen
@@ -79,5 +89,3 @@ chrpath -d %{buildroot}%{_libdir}/zen-browser/libonnxruntime.so
 %{_datadir}/icons/hicolor/*/apps/zen-browser.png
 
 %changelog
-* Tue Oct 27 2025 - 1.17.3b
-- Initial package
