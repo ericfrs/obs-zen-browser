@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Thu Oct 31 05:30:01 UTC 2025 - ericfrs <erikofarias@gmail.com>
+
+- fix: bump version to 1.17.4b
+
+-------------------------------------------------------------------
 Thu Oct 30 03:25:19 UTC 2025 - ericfrs <erikofarias@gmail.com>
 
 - fix: update zen-browser.desktop with missing fields
