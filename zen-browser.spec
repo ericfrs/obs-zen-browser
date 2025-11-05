@@ -1,5 +1,5 @@
 Name:           zen-browser
-Version:        1.17.4b
+Version:        1.17.5b
 Release:        0
 Summary:        Minimal browser focused on privacy and calm browsing
 License:        MPL-2.0
